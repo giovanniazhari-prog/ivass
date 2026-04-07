@@ -1,0 +1,5 @@
+{
+  "BOT_TOKEN": "123456789:ABCDEFGHijklmnopqrstuvwxyz",
+  "ADMIN_CHAT_ID": "123456789",
+  "IVASMS_COOKIES": "[{\"name\":\"XSRF-TOKEN\",\"value\":\"eyJ...\"},{\"name\":\"ivas_sms_session\",\"value\":\"eyJ...\"}]"
+}

@@ -7,6 +7,9 @@ logger = logging.getLogger(__name__)
 
 def get_connection() -> sqlite3.Connection:
     db_path = os.getenv("DB_PATH", "bot_data.db")
+    db_dir = os.path.dirname(db_path)
+    if db_dir:
+        os.makedirs(db_dir, exist_ok=True)
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     return conn
@@ -202,4 +205,4 @@ def get_today_otps() -> list[dict]:
             "seen_at": r["seen_at"],
         }
         for r in rows
-    ]
+        ]

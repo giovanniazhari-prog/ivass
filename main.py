@@ -1325,7 +1325,7 @@ async def _forward_sms(bot: Bot, chat_id: int, data: dict):
         f"{'─'*26}\n"
         f"📱 Nomor  : <code>{recipient}</code>\n"
         f"🌍 Range  : {em}<b>{rng_name}</b>\n"
-        f"📨 Sender : <b>{originator}</b>\n"
+        f"📨 Sender : <b>{originator.replace('<', '&lt;').replace('>', '&gt;')}</b>\n"
     )
 
     if otp_code:
@@ -1333,7 +1333,7 @@ async def _forward_sms(bot: Bot, chat_id: int, data: dict):
 
     notif += (
         f"{'─'*26}\n"
-        f"💬 Pesan:\n<code>{message[:300]}</code>\n"
+        f"💬 Pesan:\n<code>{message[:300].replace('<', '&lt;').replace('>', '&gt;')}</code>\n"
         f"{'─'*26}\n"
         f"{paid_icon}  |  Range: {rng_name}"
     )

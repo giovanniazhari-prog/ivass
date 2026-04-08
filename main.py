@@ -11,8 +11,8 @@ import re
 import urllib.parse
 from datetime import date
 
-import socketio as _sio_check
-print(">>> socketio version:", _sio_check.__version__, flush=True)
+import pkg_resources
+print(">>> socketio version:", pkg_resources.get_distribution("python-socketio").version, flush=True)
 
 from aiogram import Bot, Dispatcher, F, Router
 from aiogram.filters import Command

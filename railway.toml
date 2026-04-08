@@ -1,5 +1,3 @@
-[build]
-nixpacksBuildCommand = "pip install --no-cache-dir -r requirements.txt"
 
 [deploy]
 startCommand = "python main.py"

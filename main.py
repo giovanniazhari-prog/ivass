@@ -14,6 +14,11 @@ from datetime import date
 import pkg_resources
 print(">>> socketio version:", pkg_resources.get_distribution("python-socketio").version, flush=True)
 
+# Fix: aiohttp 3.9+ hapus ClientWSTimeout
+import aiohttp as _aiohttp_patch
+if not hasattr(_aiohttp_patch, 'ClientWSTimeout'):
+    _aiohttp_patch.ClientWSTimeout = _aiohttp_patch.ClientTimeout
+
 from aiogram import Bot, Dispatcher, F, Router
 from aiogram.filters import Command
 from aiogram.types import (
